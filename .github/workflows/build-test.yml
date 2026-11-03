@@ -64,7 +64,10 @@ jobs:
       - name: Setup packages on Ubuntu 22.04/24.04
         if: ${{ runner.os == 'Linux' && (matrix.target.os == 'ubuntu-22.04' || matrix.target.os == 'ubuntu-24.04') }}
         run: |
-          sudo apt-get install linux-modules-extra-$(uname -r)
+          # Newer runner kernels (e.g. -azure) may not ship a matching
+          # linux-modules-extra package, so fall back to linux-modules.
+          sudo apt-get install linux-modules-extra-$(uname -r) || \
+            sudo apt-get install linux-modules-$(uname -r)
 
       - name: Setup packages on Linux 26.04
         if: ${{ runner.os == 'Linux' && (matrix.target.os == 'ubuntu-26.04') }}
