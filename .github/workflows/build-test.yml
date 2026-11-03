@@ -5,6 +5,7 @@ on:
     branches:
       - develop
       - 'libcsp-*'
+  workflow_dispatch:
 permissions:
   contents: read
 concurrency:
