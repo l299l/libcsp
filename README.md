@@ -1,4 +1,4 @@
-![CI Status](https://github.com/libcsp/libcsp/actions/workflows/build-test.yml/badge.svg)
+[![Build and Test](https://github.com/l299l/libcsp/actions/workflows/build-test.yml/badge.svg)](https://github.com/l299l/libcsp/actions/workflows/build-test.yml)
 
 # The Cubesat Space Protocol
 
